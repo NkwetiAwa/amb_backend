@@ -1,0 +1,33 @@
+{
+  "name": "amb",
+  "version": "1.0.0",
+  "description": "backend server for amb website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "amb",
+    "backend",
+    "pg"
+  ],
+  "author": "TEC Labs",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "formidable": "^1.1.1",
+    "fs": "0.0.1-security",
+    "moment": "^2.29.1",
+    "node-cron": "^3.0.0",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5",
+    "socket.io": "^3.1.1"
+  }
+}
