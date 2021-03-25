@@ -6,17 +6,17 @@ const fs = require("fs");
 const https = require("https");
 const http = require("http");
 
-// var privateKey  = fs.readFileSync('sslcert/server.key', 'utf8');
-// var certificate = fs.readFileSync('sslcert/server.crt', 'utf8');
+var privateKey  = fs.readFileSync('sslcert/server.key', 'utf8');
+var certificate = fs.readFileSync('sslcert/server.crt', 'utf8');
 
-// var credentials = {key: privateKey, cert: certificate};
+var credentials = {key: privateKey, cert: certificate};
 
 const app = express();
 var cron = require('node-cron');
 
 
 var httpServer = http.createServer(app);
-// var httpsServer = https.createServer(credentials, app);
+var httpsServer = https.createServer(credentials, app);
 
 const { Disactivator } = require("./routes/functions/Disactivator");
 
@@ -67,5 +67,5 @@ app.use('/search', search);
 
 
 httpServer.listen(8080);
-// httpsServer.listen(8443);
+httpsServer.listen(8443);
 
