@@ -1,5 +1,4 @@
 const db = require('./../../models');
-const Op = require('Sequelize').Op;
 const Merchants = db.merchant;
 
 

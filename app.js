@@ -2,16 +2,25 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path")
-const server = require('./server');
+const fs = require("fs");
+const https = require("https");
+const http = require("http");
+
+// var privateKey  = fs.readFileSync('sslcert/server.key', 'utf8');
+// var certificate = fs.readFileSync('sslcert/server.crt', 'utf8');
+
+// var credentials = {key: privateKey, cert: certificate};
+
 const app = express();
 var cron = require('node-cron');
+
+
+var httpServer = http.createServer(app);
+// var httpsServer = https.createServer(credentials, app);
 
 const { Disactivator } = require("./routes/functions/Disactivator");
 
 
-const socketIo = require('socket.io');
-
-//Cron job to run everyday and disactivate accounts with expired payment
 cron.schedule('0 0 0 * * *', () => {
   Disactivator();
 });
@@ -57,20 +66,6 @@ app.use('/search', search);
 //defining the server
 
 
-server.appListen(app);
+httpServer.listen(8080);
+// httpsServer.listen(8443);
 
-const socketServer = server.getServer();
-
-const io = socketIo(socketServer);
-
-io.on('connection', (socket)=>{
-  console.log("the socket is connected connected");
-
-  socket.on("newMessage", (data)=>{
-    console.log("you have got a new message: ", data);
-
-    socket.emit("getNewMessage", {data, status:true});
-  })
-})
-
-module.exports = { io };

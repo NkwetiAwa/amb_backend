@@ -9,7 +9,7 @@ const urlEncodedParser = bodyParser.urlencoded({
  });
 
 
-const reviewController = require('../Controllers/reviewController');
+const reviewController = require('../controllers/reviewController');
 
 //posting a new review
 router.post('/comment', urlEncodedParser, reviewController.addNewReview);

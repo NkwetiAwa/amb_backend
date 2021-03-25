@@ -2,7 +2,7 @@ const router = require('express').Router();
 const db = require('./../models');
 const fs = require('fs');
 const formidable = require('formidable');
-const Op = require('Sequelize').Op;
+const Op = require('sequelize').Op;
 
 const Merchants = db.merchant;
 const Products = db.products;

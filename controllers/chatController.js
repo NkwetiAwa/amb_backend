@@ -1,5 +1,5 @@
 const RoomChat = require('../models/chatMessagesModel');
-const CatchAsync = require('../Utils/CatchAsync');
+const CatchAsync = require('../utils/catchAsync');
 const db = require("./../models");
 const chatMessage = db.chats;
 const Merchants = db.merchant;

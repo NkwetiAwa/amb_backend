@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const db = require('./../models');
 const bcrypt = require('bcrypt');
-const Op = require('Sequelize').Op;
+const Op = require('sequelize').Op;
 const formidable = require('formidable');
 const fs = require('fs');
 //const { json } = require('sequelize/types');

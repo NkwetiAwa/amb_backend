@@ -3,7 +3,7 @@ const db = require('./../models');
 const bcrypt = require('bcrypt');
 const formidable = require('formidable');
 const fs = require('fs');
-const Op = require('Sequelize').Op;
+const Op = require('sequelize').Op;
 
 const Merchants = db.merchant;
 const Products = db.products;

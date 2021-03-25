@@ -7,7 +7,7 @@ const urlEncodedParser = bodyParser.urlencoded({
     extended: true,
  });
 
-const chatController = require('../Controllers/chatController');
+const chatController = require('../controllers/chatController');
 
 //posting a new message
 router.post('/newmessage', urlEncodedParser, chatController.addNewMessage);

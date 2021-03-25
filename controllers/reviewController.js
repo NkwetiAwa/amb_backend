@@ -1,5 +1,5 @@
 const Review = require('../models/reviewModel');
-const CatchAsync = require('../Utils/CatchAsync');
+const CatchAsync = require('../utils/catchAsync');
 const db = require("./../models");
 
 const review = db.reviews;
